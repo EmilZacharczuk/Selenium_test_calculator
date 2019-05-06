@@ -22,4 +22,10 @@ describe('calculator', function () {
     actual = calculator.runningTotal;
     assert.strictEqual(actual, 3);
   })
+  it('it should multiply 3 by 5 and get 15', function(){
+    calculator.previousTotal = 3;
+    calculator.multiply(5);
+    actual = calculator.runningTotal;
+    assert.strictEqual(actual, 15);
+  })
 });
