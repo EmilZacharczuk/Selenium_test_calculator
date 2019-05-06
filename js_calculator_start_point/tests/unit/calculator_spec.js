@@ -16,4 +16,10 @@ describe('calculator', function () {
     actual = calculator.runningTotal;
     assert.strictEqual(actual, 5);
   })
+  it('it should subtract 4 from 7 and get 3', function(){
+    calculator.previousTotal = 7;
+    calculator.subtract(4);
+    actual = calculator.runningTotal;
+    assert.strictEqual(actual, 3);
+  })
 });
