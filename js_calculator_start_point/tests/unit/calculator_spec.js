@@ -49,4 +49,15 @@ describe('calculator', function () {
     actual = calculator.runningTotal;
     assert.strictEqual(actual, 3);
   })
+  it('it should clear the running total without affecting the calculation', function(){
+    calculator.numberClick(5);
+    calculator.operatorClick('+');
+    calculator.numberClick(4);
+    calculator.clearClick();
+    calculator.operatorClick('-');
+    calculator.numberClick(1);
+    calculator.operatorClick('=');
+    actual = calculator.runningTotal;
+    assert.strictEqual(actual, 4);
+  })
 });
