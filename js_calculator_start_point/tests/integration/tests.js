@@ -21,4 +21,12 @@ describe('calculator functionality', function() {
     element(by.css('#number3')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('123')
   })
+  it('should do the arithmetical operations update the display with the result of the operation', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number1')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#number3')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('4')
+  })
 });
