@@ -47,4 +47,14 @@ describe('calculator functionality', function() {
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('15')
   })
+  it('should work for negative numbers', function () {
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number1')).click();
+    element(by.css('#operator_subtract')).click();
+    element(by.css('#number2')).click();
+    element(by.css('#operator_subtract')).click();
+    element(by.css('#number3')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('-4')
+  })
 });
