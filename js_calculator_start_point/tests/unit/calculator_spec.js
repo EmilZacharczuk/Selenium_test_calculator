@@ -28,4 +28,10 @@ describe('calculator', function () {
     actual = calculator.runningTotal;
     assert.strictEqual(actual, 15);
   })
+  it('it should divide 21 by 7 and get 3', function(){
+    calculator.previousTotal = 21;
+    calculator.divide(7);
+    actual = calculator.runningTotal;
+    assert.strictEqual(actual, 3);
+  })
 });
