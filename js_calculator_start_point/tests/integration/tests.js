@@ -14,4 +14,11 @@ describe('calculator functionality', function() {
     const runningTotalValue = running_total.getAttribute('value')
     expect(runningTotalValue).to.eventually.equal('2')
   });
+  it('should have number buttons updating the display of running total', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number1')).click();
+    element(by.css('#number2')).click();
+    element(by.css('#number3')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('123')
+  })
 });
